@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
 export class ProductsComponent implements OnInit, OnDestroy {
   productName!: string;
   isDisabled = true;
-  products = ['A Book', 'A Tree'];
+  products = [] as string[];
   private productsSubscription!: Subscription;
 
   ngOnInit(): void {
