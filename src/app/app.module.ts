@@ -7,11 +7,12 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { ProductComponent } from './components/product/product.component';
 import { ProductsComponent } from './components/products/products.component';
+import { ProductsService } from './products.service';
 
 @NgModule({
   declarations: [AppComponent, ProductComponent, ProductsComponent],
   imports: [BrowserModule, AppRoutingModule, MaterialModule, FormsModule],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
