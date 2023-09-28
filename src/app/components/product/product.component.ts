@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-product',
@@ -6,13 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent {
-  productName = 'A Book';
+  @Input() productName!: string;
+  @Output() productClicked = new EventEmitter<boolean>();
 
-  isDisabled = false;
-
-  constructor() {
-    setTimeout(() => {
-      this.productName = 'A Car';
-    }, 3000);
+  onClicked() {
+    this.productClicked.emit(true);
+    console.log('clicked ' + this.productName);
   }
 }
